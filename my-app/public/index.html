@@ -15,6 +15,16 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <iframe
+      width="600"
+      height="450"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDKqGu0JcFFXyXME4QdV4ea3n8RhQHkOd8
+        &q=Space+Needle,Seattle+WA" allowfullscreen>
+    </iframe> -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKqGu0JcFFXyXME4QdV4ea3n8RhQHkOd8&callback=initMap">
+    </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

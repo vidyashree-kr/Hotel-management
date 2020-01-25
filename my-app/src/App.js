@@ -1,15 +1,31 @@
-import React, { Component } from 'react';
-import './App.css';
-import HotelDetails from './hotelDetails'
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import LandingPage from './components/LandingComponent/LandingPage'
+import DetailPage from './components/DetailComponent/Detailpage'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-      <HotelDetails/>
+function App() {
+
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/">
+            <LandingPage />
+          </Route>
+          <Route path="/details">
+            <DetailPage />
+          </Route>
+          <Route path="/bookings">
+
+          </Route>
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;
