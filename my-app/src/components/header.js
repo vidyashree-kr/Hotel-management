@@ -25,7 +25,7 @@ const Header = () => {
             <AppBar position="fixed">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-           MyLogo
+           Logo
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             Hotel Booking Portal

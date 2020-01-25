@@ -6,6 +6,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import {Typography,TextField} from '@material-ui/core';
 import GuestDetails from './GuestDetails'
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 const useStyles = makeStyles({
   card: {
@@ -27,8 +32,17 @@ const useStyles = makeStyles({
 });
 
 export default function BookingCard(props) {
-  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const classes = useStyles();
   return (
       <div align="center">
            <Card  className={classes.card}>
@@ -63,10 +77,23 @@ export default function BookingCard(props) {
         </div>
         <div><GuestDetails/></div>
       </CardContent>
-      <Button variant="contained"  color="primary" style={{marginBottom:'20px',backgroundColor:'orange',borderRadius:'unset',width:'60%',height:'40%'}}>Book Now</Button>
-      {/* <CardActions >
-        <Button size="small">Book Now</Button>
-      </CardActions> */}
+      <Button variant="contained"  color="primary" 
+      style={{marginBottom:'20px',backgroundColor:'orange',borderRadius:'unset',width:'60%',height:'40%'}}
+      onClick={handleClickOpen}>
+        Book Now</Button>
+        <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle align="center" id="alert-dialog-title">Booking Status</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description" style={{color:'green'}}>
+           Succesfully booked the hotel.
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
     </Card>
       </div>
    

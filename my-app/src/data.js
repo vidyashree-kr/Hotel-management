@@ -8,6 +8,7 @@ export const hotelData = [{
     lat: 1,
     long: 1,
     image: [],
+    contact: 9876543210,
     room_details: [{
         id: 1,
         type: 'AC',
@@ -30,6 +31,7 @@ export const hotelData = [{
     lat: 1,
     long: 1,
     image: [],
+    contact: 9876543210,
     room_details: [{
         id: 1,
         type: 'AC',
@@ -80,6 +82,7 @@ export const hotelData = [{
     lat: 1,
     long: 1,
     image: [],
+    contact: 9876543210,
     room_details: [{
         id: 1,
         type: 'AC',
@@ -105,6 +108,7 @@ export const hotelData = [{
     lat: 1,
     long: 1,
     image: [],
+    contact: 9876543210,
     room_details: [{
         id: 1,
         type: 'Non AC',

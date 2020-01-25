@@ -3,6 +3,11 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 // grid
 import Grid from '@material-ui/core/Grid';
@@ -64,7 +69,16 @@ const useStyles = makeStyles(theme => ({
 
 let Hotel = (props) => {
     console.log(props.hotelData)
-   
+    const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
     const classes = useStyles();
     const theme = useTheme();
     return (
@@ -113,13 +127,27 @@ let Hotel = (props) => {
                             </Button>
                         </Grid>
                         <Grid item xs={12}>
-                            <Button variant="contained" color="secondary" className="myButton">
-                                Book Now
+                            <Button onClick={handleClickOpen} variant="contained" color="secondary" className="myButton">
+                                Enquire Now
                             </Button>
+                           
                         </Grid>
                     </Grid>
 
                 </Grid>
+                <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle align="center" id="alert-dialog-title">Contact Details</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description" style={{color:'green'}}>
+           Please Call us on {value.contact}
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
             </Card>
                     )
                 })

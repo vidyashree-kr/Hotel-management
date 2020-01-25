@@ -25,13 +25,11 @@ class Detailpage extends Component {
     }
     render() {
         const { location, hotelName, adress,actualAmount,discountedAmount } = this.state
-        
         const {detailsData}=this.props
         return (
             <Grid container style={{ padding: '90px 0px 2px 10px' }} xs={12} align="left" direction="column" spacing="none">
-                <Grid item ><Typography style={{ color: 'grey', fontSize: '18px' }}>Hotel</Typography></Grid>
                 <Grid item style={{ fontSize: '30px' }} ><b> {detailsData.name} , {detailsData.city}</b></Grid>
-                <Grid item><Typography style={{ color: 'grey', fontSize: '20px' }}>{detailsData.address}</Typography>
+                <Grid item><Typography style={{ color: 'grey', fontSize: '20px',marginBottom:'10px' }}>{detailsData.address}</Typography>
                 </Grid>
                 <Grid><a style={{ color: 'blue', cursor: 'pointer' }}></a><Map /></Grid>
                 <Grid container xs={12} style={{marginTop:'25px'}}>
