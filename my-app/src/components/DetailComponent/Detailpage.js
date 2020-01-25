@@ -9,10 +9,12 @@ import photo6 from '../../assets/photo6.jpg'
 import photo7 from '../../assets/photo7.jpg'
 import photo8 from '../../assets/photo8.jpg'
 import BookingCard from './BookingCard'
+import Map from './../../master/Map';
 
 class Detailpage extends Component {
     constructor(props) {
         super(props)
+        console.log(props.detailsData)
         this.state = {
             hotelName: 'Himalaya',
             location: 'Bangalore',
@@ -23,13 +25,15 @@ class Detailpage extends Component {
     }
     render() {
         const { location, hotelName, adress,actualAmount,discountedAmount } = this.state
+        
+        const {detailsData}=this.props
         return (
-            <Grid container style={{ padding: '20px 0px 2px 10px' }} xs={12} align="left" direction="column" spacing="none">
+            <Grid container style={{ padding: '90px 0px 2px 10px' }} xs={12} align="left" direction="column" spacing="none">
                 <Grid item ><Typography style={{ color: 'grey', fontSize: '18px' }}>Hotel</Typography></Grid>
-                <Grid item style={{ fontSize: '30px' }} ><b>Hotel {hotelName} at {location}</b></Grid>
-                <Grid item><Typography style={{ color: 'grey', fontSize: '20px' }}>{adress}</Typography>
+                <Grid item style={{ fontSize: '30px' }} ><b> {detailsData.name} , {detailsData.city}</b></Grid>
+                <Grid item><Typography style={{ color: 'grey', fontSize: '20px' }}>{detailsData.address}</Typography>
                 </Grid>
-                <Grid><a style={{ color: 'blue', cursor: 'pointer' }}>View on Map</a></Grid>
+                <Grid><a style={{ color: 'blue', cursor: 'pointer' }}></a><Map /></Grid>
                 <Grid container xs={12} style={{marginTop:'25px'}}>
                     <Grid container style={{marginBottom:'10px'}} xs={7}>
                       <Grid  align="left" style={{marginBottom:'10px'}} xs={6}>Hotelier Photos</Grid>
@@ -53,7 +57,7 @@ class Detailpage extends Component {
                     <Grid  xs={5} style={{marginLeft:'0px'}}>
                       <BookingCard
                       actualAmount={actualAmount}
-                      discountedAmount={discountedAmount}/></Grid>
+                      discountedAmount={detailsData.room_details[0].price}/></Grid>
                 </Grid>
             </Grid>
         );

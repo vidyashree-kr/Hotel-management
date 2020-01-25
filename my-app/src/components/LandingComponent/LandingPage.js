@@ -5,9 +5,13 @@ import ListPage from '../ListComponent/Listpage'
 import Header from '../header';
 import './LandingPage.css'
 import Footer from '../footer'
+import DetailsPage from '../DetailComponent/Detailpage'
+
 const LandingPage = () => { 
     const [hotelsData, setHotelsData] = useState(hotelData)
-    
+    const [flag, setFlag] = useState(null)
+    const [detailsData, setDetailsData] = useState(null)
+
     const handleSearch = (city, checkin, checkout, value, rating) => {
         let hotels = hotelData
         if(city) {
@@ -36,13 +40,27 @@ const LandingPage = () => {
         setHotelsData(hotels)
     }
 
+    const detailsPageFlage = (check, data) => {
+        setFlag(check)
+        setDetailsData(data)
+    }
+
     return (
         <div>
             <Header/>
-            <FilterPage
-                hotelData={hotelData}
-                handleSearch={handleSearch}
-            />
+            {!flag && 
+                <div>
+                <FilterPage
+                    hotelData={hotelData}
+                    handleSearch={handleSearch}
+                />
+                <ListPage
+                    hotelData={hotelsData}
+                    detailsPageFlage={detailsPageFlage}
+                />
+                </div>
+            }
+            {flag && <DetailsPage detailsData={detailsData} />}
         </div>
     )  
 }

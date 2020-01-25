@@ -72,6 +72,11 @@ let Hotel = (props) => {
             {
                 props.hotelData.map((value)=>{
                     console.log(value)
+                    let elements = [];
+                    for(var i = 0; i < value.rating; i++){
+                        // push the component to elements!
+                        elements.push(<GradeIcon color={star}/>);
+                    }
                     return(
                         <Card className={classes.card}>
                 <Grid container spacing={3}>
@@ -89,15 +94,13 @@ let Hotel = (props) => {
           </Typography>
                                 <Typography variant="subtitle1" color="textSecondary">
                                     
-                                    Rating: <GradeIcon color={star}/>
-                                             <GradeIcon color={star}/>
-                                            <GradeIcon color={star}/>
+                                    Rating: {elements}
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
                                    Adress: {value.address}
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-                                Price: &#8377;{value.room_details.price}
+                                Price: &#8377;{value.room_details[0].price}
           </Typography>
                             </CardContent>
                         </div>
@@ -105,7 +108,7 @@ let Hotel = (props) => {
 
                     <Grid item xs={3} className="mybtn">
                         <Grid item xs={12}>
-                            <Button variant="contained" color="primary" className="myButton" hotelData={value}>
+                            <Button variant="contained" color="primary" className="myButton" hotelData={value} onClick={()=>{props.detailsPageFlage(true, value)}}>
                                 View Details
                             </Button>
                         </Grid>
