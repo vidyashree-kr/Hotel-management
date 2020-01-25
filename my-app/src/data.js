@@ -4,7 +4,7 @@ export const hotelData = [{
     address: '45, HIMALAYA ARCED, S C ROAD, GANDHI NAGAR, Karnataka, 560009 Bengaluru India 560009',
     city: 'Bengaluru',
     state: 'Karnataka',
-    rating: '4',
+    rating: 4,
     lat: 1,
     long: 1,
     image: [],
