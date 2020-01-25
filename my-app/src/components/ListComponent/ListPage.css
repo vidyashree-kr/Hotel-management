@@ -1,0 +1,13 @@
+.hotelImg img{
+    width: 100%;
+    height: auto;
+}
+.root{
+    margin: auto;
+}
+.mybtn{
+    padding-top: 6rem !important;
+}
+.mybtn button{
+    margin-bottom: 20px;
+}
