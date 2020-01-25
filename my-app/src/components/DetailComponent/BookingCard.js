@@ -10,7 +10,7 @@ import GuestDetails from './GuestDetails'
 const useStyles = makeStyles({
   card: {
     minWidth: 235,
-    margin:'0px 10px 0px 10px'
+    margin:'0px 20px 0px 20px'
   },
   bullet: {
     display: 'inline-block',
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   title: {
     fontSize: 14,
-    textDecoration: 'line-through'
+    textDecoration: 'line-through',marginBottom:'10px'
   },
   pos: {
     marginBottom: 12,
@@ -36,7 +36,7 @@ export default function BookingCard(props) {
         <Typography className={classes.title} color="textSecondary" gutterBottom>
          &#8377; {props.actualAmount}
         </Typography>
-        <Typography variant="h5" component="h2">
+        <Typography style={{marginBottom:'20px'}} variant="h5" component="h2">
         &#8377; {props.discountedAmount}  per Room / night
         </Typography>
         <div>
@@ -63,7 +63,7 @@ export default function BookingCard(props) {
         </div>
         <div><GuestDetails/></div>
       </CardContent>
-      <Button variant="contained" color="primary" style={{marginBottom:'20px'}}>Book Now</Button>
+      <Button variant="contained"  color="primary" style={{marginBottom:'20px',backgroundColor:'orange',borderRadius:'unset',width:'60%',height:'40%'}}>Book Now</Button>
       {/* <CardActions >
         <Button size="small">Book Now</Button>
       </CardActions> */}

@@ -49,9 +49,17 @@ const useStyles = makeStyles(theme => ({
 
 export default function PopoverPopupState() {
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
+    const [rooms, setrooms] = React.useState('');
+    const [adults, setadults] = React.useState('');
+    const [children, setchildren] = React.useState('');
     const handleChange = event => {
-        setAge(event.target.value);
+        setrooms(event.target.value);
+    };
+    const handleChange2 = event => {
+        setadults(event.target.value)
+    };
+    const handleChange3 = event => {
+        setchildren(event.target.value)
     };
     return (
         <div style={{ marginTop: '20px' }}>
@@ -80,7 +88,7 @@ export default function PopoverPopupState() {
                                         <Grid> <FormControl className={classes.margin}>
                                             <NativeSelect
                                                 id="demo-customized-select-native"
-                                                value={age}
+                                                value={rooms}
                                                 onChange={handleChange}
                                                 input={<BootstrapInput />}
                                             >
@@ -96,8 +104,8 @@ export default function PopoverPopupState() {
                                         <Grid> <FormControl className={classes.margin}>
                                             <NativeSelect
                                                 id="demo-customized-select-native"
-                                                value={age}
-                                                onChange={handleChange}
+                                                value={adults}
+                                                onChange={handleChange2}
                                                 input={<BootstrapInput />}
                                             >
                                                 <option value="" />
@@ -112,8 +120,8 @@ export default function PopoverPopupState() {
                                         <Grid> <FormControl className={classes.margin}>
                                             <NativeSelect
                                                 id="demo-customized-select-native"
-                                                value={age}
-                                                onChange={handleChange}
+                                                value={children}
+                                                onChange={handleChange3}
                                                 input={<BootstrapInput />}
                                             >
                                                 <option value="" />
