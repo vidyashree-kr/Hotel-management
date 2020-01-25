@@ -1,12 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Hotel from './Hotel';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import LandingPage from './components/LandingComponent/LandingPage'
+import DetailPage from './components/DetailComponent/Detailpage'
+
 function App() {
+
   return (
-    <div className="App">
-      <Hotel/>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/">
+            <LandingPage />
+          </Route>
+          <Route path="/details">
+            <DetailPage />
+          </Route>
+          <Route path="/bookings">
+
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
