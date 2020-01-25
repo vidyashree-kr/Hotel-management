@@ -68,7 +68,7 @@ export default function PopoverPopupState() {
                     <div>
                         <Button variant="outlined" color="primary" fullWidth
                             style={{ backgroundColor: 'white', color: 'black', border: '1px solid grey' }} {...bindTrigger(popupState)}>
-                            Open Popover
+                            Guest / Room Details
           </Button>
                         <Popover
                             fullWidth
