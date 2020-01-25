@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import FilterPage from '../FilterComponent/FilterPage'
 import { hotelData } from '../../data.js'
-
+import ListPage from '../ListComponent/Listpage'
+import Header from '../header';
+import './LandingPage.css'
+import Footer from '../footer'
 const LandingPage = () => { 
     const [hotelsData, setHotelsData] = useState(hotelData)
     
@@ -35,7 +38,7 @@ const LandingPage = () => {
 
     return (
         <div>
-            <h1> Hotel Home Page </h1>
+            <Header/>
             <FilterPage
                 hotelData={hotelData}
                 handleSearch={handleSearch}
