@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+
 import LandingPage from './components/LandingComponent/LandingPage'
 import DetailPage from './components/DetailComponent/Detailpage'
 
